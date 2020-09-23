@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom2.html</title>
+    <style>
+        .lis{
+            background-color: salmon;
+        }
+        #hello{
+            background-color: pink;
+        }
+    </style>
+    <script src="dom.js"></script>
+
+</head>
+<body id ="bdy" onload="loadPage()">
+    <script>
+        document.querySelectorAll("body");
+        let bdy=document.getElementsByTagName("body");
+        bdy[0].innerHTML="<h1>Hello</h1>";
+        //<ul><li>오렌지</li></ul>
+        let $ul=document.createElement("ul");
+        let $li=document.createElement("li");
+        let $text=document.createTextNode("오렌지");
+        $li.setAttribute("class","lis");
+       // $li.setAttribute("style","background:yellow;");
+
+        $ul.appendChild($li);//ul의 자식으로 li붙여주겠다
+        $li.appendChild($text);//오렌지
+
+        $li=document.createElement("li");
+        $ul.appendChild($li);
+        $text=document.createTextNode("사과");
+        $li.appendChild($text);
+        $li.setAttribute("style","background:yellow;");
+
+        bdy[0].appendChild($ul);
+
+        $div=document.createElement("div");
+        $p=document.createElement("p");
+        $div.appendChild($p);
+        $text=document.createTextNode("Hello");
+        $h2=document.createElement("h2");
+        $text1=document.createTextNode("world");
+        $h2.appendChild($text1);
+        $div.appendChild($h2);
+        
+        $p.appendChild($text);
+        $p.setAttribute("id","hello");
+        $h2.setAttribute("style","background:blue;");
+        bdy[0].appendChild($div);
+        
+
+    </script>
+    <script src="dom2.js"></script>
+</body>
+</html>

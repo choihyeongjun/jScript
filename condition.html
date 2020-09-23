@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>output.html</title>
+</head>
+<body>
+
+    <div id="showResult" style="border:1px solid red;"></div>
+    <script>
+        var cols=['월','화','수','목','금'];
+        for(var i=0;i<cols.length;i++){
+            console.log(cols[i]); 
+        }
+        var i=1;
+           var elem= document.getElementById("showResult");        
+           var tag="<table border='1'><tr>";
+        for(col of cols){
+            tag+="<td>"+col+"</td>";
+            console.log(col);
+        
+        }
+        cols.forEach(function(a,b,c){
+            console.log(a,b,c);
+        });
+        while(i<21){
+            if(i%5!=1)
+            tag+="<td>"+i+"</td>";
+            else if(i%5==1)
+            tag+="<td style='border:1px solid red'>"+i+"</td>";
+            if(i%5==0){
+                tag+="</tr><tr>";
+            }
+            i++;
+        }
+        tag+="</tr></table>";
+        elem.innerHTML=tag;
+
+
+        var bool1= 10<8;
+        var sum=0;
+     for(var i=0;i<5;i++){  
+         bool1=!bool1;
+         if(bool1){
+             sum+=i;
+         }
+     }
+     console.log(sum);
+
+    </script> 
+</body>
+</html>
