@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timing.html</title>
+    <style></style>
+</head>
+<body>
+    <button onclick="callFunc()"></button>
+    <script>
+        function calllFunc(){
+        window.setTimeout(callBackFunc,1000);
+        window.setInterval(add,1000);
+    }
+    function callBackFunc(){
+        console.log("1초 지남")
+    }
+    function add(){
+        console.log("add() 호출");
+    }
+    </script>
+</body>
+</html>
