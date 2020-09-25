@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json2.html</title>
+    <script>
+        let student={
+            name:"Hong",
+            age:10,
+            grade: null,
+            birth:new Date(),
+            marriage:false,
+            info:function(){
+                console.log("my name is hong");
+            }
+      
+        }
+
+        //let json=JSON.stringify(student,['name','age']);//원하는필드만 보고싶을때
+        let json=JSON.stringify(student);
+        let reStu=JSON.parse(json,function(k,v){
+            console.log(k,v);
+            return ((k=='birth')? new Date():v);
+        });
+        console.log(reStu);
+        console.log(reStu.birth.getDate());
+
+       
+        // let json=JSON.stringify(student,function(k,v){
+        //     console.log(k,v);
+        //     if(k=='name'){
+        //         return v;
+        //     }
+        //     else{
+        //         return null;
+        //     }
+        // });
+
+       // console.log(json);
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

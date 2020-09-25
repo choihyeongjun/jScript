@@ -12,7 +12,7 @@
                 console.log(xhtp.readyState,xhtp.status);
                 if(xhtp.readyState==4&&xhtp.status==200){
                 let data=xhtp.responseText;
-                let obj=JSON.parse(data);
+                let obj=JSON.parse(data);//json=>문자열
                 console.log(obj);
                 createPage(obj);
 
